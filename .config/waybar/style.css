@@ -1,0 +1,142 @@
+@define-color bg #272822;
+@define-color fg #F8F8F2;
+@define-color red #F92672;
+@define-color purple #AE81FF;
+@define-color green #A6E22E;
+@define-color cyan #66D9EF;
+@define-color blue #2AA198;
+@define-color yellow #F4BF75;
+@define-color orange #75715E;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetbrainsMono Nerd Font";
+  font-size: 14px;
+}
+window#waybar {
+  background: none;
+}
+window#waybar.hidden {
+  opacity: 0.2;
+}
+window#waybar.empty {
+  background: none;
+}
+#waybar.empty #window {
+  background: none;
+}
+#window {
+  transition: none;
+  color: @fg;
+}
+label,
+#tray {
+  transition: color 64ms ease-in-out;
+  margin: 0 3px;
+  margin-top: 8px;
+  border-radius: 32px;
+  padding: 8px 10px;
+  background: #272822;
+  /* padding-right: 20px; */
+}
+#idle_inhibitor,
+#pulseaudio,
+#cpu,
+#memory {
+  padding-right: 15px;
+}
+box.horizontal {
+  margin: 0 3px;
+}
+#idle_inhibitor {
+  color: @fg;
+}
+#idle_inhibitor.deactivated {
+  color: @red;
+}
+#custom-powermenu {
+  transition: none;
+}
+#mode {
+  transition: none;
+}
+#workspaces {
+  transition: none;
+}
+#workspaces button {
+  transition: none;
+  color: #4c566a;
+  background: transparent;
+  border-radius: 0px;
+}
+#workspaces button.occupied {
+  transition: none;
+  color: #a3be8c;
+  background: transparent;
+  font-size: 4px;
+}
+#workspaces button.focused {
+  color: #81a1c1;
+  border-bottom: 2px solid #81a1c1;
+}
+#workspaces button:hover {
+  transition: none;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: #81a1c1;
+}
+#temperature {
+  /*margin-right: 12px;*/
+  transition: none;
+  color: @green;
+}
+#pulseaudio {
+  transition: none;
+  color: @green;
+}
+#battery {
+  transition: none;
+  color: @green;
+}
+#battery.critical:not(.charging) {
+  background-color: @red;
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes blink {
+  to {
+    background-color: #bf616a;
+    color: #d8dee9;
+  }
+}
+#backlight {
+  transition: none;
+  color: #88c0d0;
+}
+#cpu {
+  transition: none;
+  color: @cyan;
+}
+#memory {
+  transition: none;
+  color: @cyan;
+}
+#clock {
+  transition: none;
+  color: @green;
+}
+#tray {
+  color: @fg;
+}
+#network {
+  color: @cyan;
+}
+#network.disconnected,
+#network.disabled {
+  color: @red;
+}
