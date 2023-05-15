@@ -1,0 +1,17 @@
+/*
+ *
+ * Author  : Aditya Shakya
+ * Mail    : adi1090x@gmail.com
+ * Github  : @adi1090x
+ * Twitter : @adi1090x
+ *
+ */
+
+@import "config.rasi"
+inputbar {
+   enabled: 						false;
+}
+listview {
+cycle: true;
+  lines: 5;
+}
